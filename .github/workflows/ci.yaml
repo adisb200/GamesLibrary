@@ -20,3 +20,8 @@ jobs:
         run: ./mvnw -B test
         env:
           SPRING_PROFILES_ACTIVE: h2
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "deploy"
