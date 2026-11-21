@@ -10,4 +10,9 @@ class TitleNormalizerTest {
     void normalize_trimsSurroundingSpaces() {
         assertEquals("Zelda", TitleNormalizer.normalize("  Zelda  "));
     }
+
+    @Test
+    void normalize_collapsesMultipleSpaces() {
+        assertEquals("The Legend of Zelda", TitleNormalizer.normalize("The   Legend  of    Zelda"));
+    }
 }
